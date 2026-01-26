@@ -1,0 +1,608 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Video Tutorials</title>
+    <style>
+        /* --- General Styles --- */
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: #f4f4f4; /* Light grey background for contrast */
+            margin: 0;
+            padding: 0;
+        }
+
+        /* --- Navigation (Keeping consistent with your Home Page) --- */
+        .navbar {
+            background-color: white;
+            padding: 15px;
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+        }
+
+        .nav-btn {
+            background-color: #d32f2f;
+            color: white;
+            text-decoration: none;
+            padding: 10px 20px;
+            border-radius: 5px;
+            font-weight: bold;
+        }
+
+        .nav-btn:hover {
+            background-color: #b71c1c;
+        }
+
+        /* --- Search Section --- */
+        .search-container {
+            max-width: 800px;
+            margin: 40px auto 20px auto; /* Centers the bar */
+            padding: 0 20px;
+            text-align: center;
+        }
+
+        #searchBar {
+            width: 100%;
+            padding: 15px;
+            font-size: 1.1rem;
+            border: 2px solid #ddd;
+            border-radius: 30px; /* Rounded pill shape */
+            outline: none;
+            transition: border-color 0.3s;
+        }
+
+        #searchBar:focus {
+            border-color: #d32f2f; /* Highlights red when typing */
+        }
+
+        /* --- Video Grid Section --- */
+        .video-grid {
+            display: grid;
+            /* Creates a responsive grid that fits as many videos as possible */
+            grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+            gap: 30px;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+
+        /* --- Individual Video Card --- */
+        .video-card {
+            background-color: white;
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+            transition: transform 0.2s;
+            text-decoration: none; /* Removes underline from link */
+            color: #333;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .video-card:hover {
+            transform: translateY(-5px); /* Lifts up slightly on hover */
+            box-shadow: 0 8px 16px rgba(0,0,0,0.2);
+        }
+
+        .thumbnail-container {
+            width: 100%;
+            height: 160px;
+            overflow: hidden;
+        }
+
+        .thumbnail-container img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover; /* Ensures image covers the box without stretching */
+        }
+
+        .video-info {
+            padding: 15px;
+        }
+
+        .video-title {
+            font-size: 1.1rem;
+            font-weight: bold;
+            margin-bottom: 5px;
+            /* Limits text to 2 lines */
+            display: -webkit-box;
+            -webkit-line-clamp: 2;
+            -webkit-box-orient: vertical;
+            overflow: hidden;
+        }
+
+        .no-results {
+            text-align: center;
+            width: 100%;
+            display: none;
+            color: #666;
+            margin-top: 20px;
+        }
+    </style>
+</head>
+<body>
+
+    <nav class="navbar">
+        <a href="index.html" class="nav-btn">Home</a>
+        <a href="maze-games.html" class="nav-btn">Maze Games</a>
+        <a href="text-tutorials.html" class="nav-btn">Text Tutorials</a>
+    </nav>
+
+    <div class="search-container">
+        <h1>Video Tutorials</h1>
+        <input type="text" id="searchBar" placeholder="Search for a tutorial (e.g., 'Coding', 'Design')...">
+    </div>
+
+    <div class="video-grid" id="videoGrid">
+        
+        <a href="https://www.youtube.com/watch?v=8HXqOHH2ocM" target="_blank" class="video-card">
+            <div class="thumbnail-container">
+                <img src="https://img.youtube.com/vi/8HXqOHH2ocM/maxresdefault.jpg" alt="Java Tutorial #1: JDK, IDE and Hello World">
+            </div>
+            <div class="video-info">
+                <div class="video-title"> JDK, IDE and Hello World </div>
+            </div>
+        </a>
+
+        <a href="https://www.youtube.com/watch?v=lePkYEGt2es" target="_blank" class="video-card">
+            <div class="thumbnail-container">
+                <img src="https://img.youtube.com/vi/lePkYEGt2es/maxresdefault.jpg" alt="Java Tutorial #2: Variables & Datatypes">
+            </div>
+            <div class="video-info">
+                <div class="video-title"> Variables & Datatypes </div>
+            </div>
+        </a>
+
+        <a href="https://www.youtube.com/watch?v=76b2d6ozN_k" target="_blank" class="video-card">
+            <div class="thumbnail-container">
+                <img src="https://img.youtube.com/vi/76b2d6ozN_k/maxresdefault.jpg" alt="Java Tutorial #2: Variables & Datatypes">
+            </div>
+            <div class="video-info">
+                <div class="video-title"> User Input & Arithmetic Operators </div>
+            </div>
+        </a>
+
+        <a href="https://www.youtube.com/watch?v=LzeUR6JJBZo" target="_blank" class="video-card">
+            <div class="thumbnail-container">
+                <img src="https://img.youtube.com/vi/LzeUR6JJBZo/maxresdefault.jpg" alt="Java Tutorial #2: Variables & Datatypes">
+            </div>
+            <div class="video-info">
+                <div class="video-title">Arrays</div>
+            </div>
+        </a>
+
+        <a href="https://www.youtube.com/watch?v=m8Qo5vT-5MY" target="_blank" class="video-card">
+            <div class="thumbnail-container">
+                <img src="https://img.youtube.com/vi/m8Qo5vT-5MY/maxresdefault.jpg" alt="Java Tutorial #2: Variables & Datatypes">
+            </div>
+            <div class="video-info">
+                <div class="video-title">Conditional Statements</div>
+            </div>
+        </a>
+
+        <a href="https://www.youtube.com/watch?v=Px3J6ZdDqls" target="_blank" class="video-card">
+            <div class="thumbnail-container">
+                <img src="https://img.youtube.com/vi/Px3J6ZdDqls/maxresdefault.jpg" alt="Java Tutorial #2: Variables & Datatypes">
+            </div>
+            <div class="video-info">
+                <div class="video-title">Switch Statements</div>
+            </div>
+        </a>
+
+        <a href="https://www.youtube.com/watch?v=WX978uCVAkM" target="_blank" class="video-card">
+            <div class="thumbnail-container">
+                <img src="https://img.youtube.com/vi/WX978uCVAkM/maxresdefault.jpg" alt="Java Tutorial #2: Variables & Datatypes">
+            </div>
+            <div class="video-info">
+                <div class="video-title">WHILE & DO - WHILE Loop</div>
+            </div>
+        </a>
+
+        <a href="https://www.youtube.com/watch?v=re6AlB8AciI" target="_blank" class="video-card">
+            <div class="thumbnail-container">
+                <img src="https://img.youtube.com/vi/re6AlB8AciI/maxresdefault.jpg" alt="Java Tutorial #2: Variables & Datatypes">
+            </div>
+            <div class="video-info">
+                <div class="video-title">FOR Loop</div>
+            </div>
+        </a>
+
+        <a href="https://www.youtube.com/watch?v=rGVpVP9o6ps" target="_blank" class="video-card">
+            <div class="thumbnail-container">
+                <img src="https://img.youtube.com/vi/rGVpVP9o6ps/maxresdefault.jpg" alt="Java Tutorial #2: Variables & Datatypes">
+            </div>
+            <div class="video-info">
+                <div class="video-title">FOR - EACH Loop</div>
+            </div>
+        </a>
+
+        <a href="https://www.youtube.com/watch?v=zC8R_JXiqDs" target="_blank" class="video-card">
+            <div class="thumbnail-container">
+                <img src="https://img.youtube.com/vi/zC8R_JXiqDs/maxresdefault.jpg" alt="Java Tutorial #2: Variables & Datatypes">
+            </div>
+            <div class="video-info">
+                <div class="video-title">2D Arrays + NESTED FOR Loop & NESTED FOR-EACH Loop</div>
+            </div>
+        </a>
+
+        <a href="https://www.youtube.com/watch?v=s7GQ5HmlGQY" target="_blank" class="video-card">
+            <div class="thumbnail-container">
+                <img src="https://img.youtube.com/vi/s7GQ5HmlGQY/maxresdefault.jpg" alt="Java Tutorial #2: Variables & Datatypes">
+            </div>
+            <div class="video-info">
+                <div class="video-title">Methods / Functions</div>
+            </div>
+        </a>
+
+        <a href="https://www.youtube.com/watch?v=VI9D3_zGG74" target="_blank" class="video-card">
+            <div class="thumbnail-container">
+                <img src="https://img.youtube.com/vi/VI9D3_zGG74/maxresdefault.jpg" alt="Java Tutorial #2: Variables & Datatypes">
+            </div>
+            <div class="video-info">
+                <div class="video-title">Packages & Modifiers</div>
+            </div>
+        </a>
+
+        <a href="https://www.youtube.com/watch?v=CwdhP_zA3lg" target="_blank" class="video-card">
+            <div class="thumbnail-container">
+                <img src="https://img.youtube.com/vi/CwdhP_zA3lg/maxresdefault.jpg" alt="Java Tutorial #2: Variables & Datatypes">
+            </div>
+            <div class="video-info">
+                <div class="video-title">Classes & Objects</div>
+            </div>
+        </a>
+
+        <a href="https://www.youtube.com/watch?v=zoZ8uzpDiBA" target="_blank" class="video-card">
+            <div class="thumbnail-container">
+                <img src="https://img.youtube.com/vi/zoZ8uzpDiBA/maxresdefault.jpg" alt="Java Tutorial #2: Variables & Datatypes">
+            </div>
+            <div class="video-info">
+                <div class="video-title">Constructors</div>
+            </div>
+        </a>
+
+        <a href="https://www.youtube.com/watch?v=nlwXDmrF3Lg" target="_blank" class="video-card">
+            <div class="thumbnail-container">
+                <img src="https://img.youtube.com/vi/nlwXDmrF3Lg/maxresdefault.jpg" alt="Java Tutorial #2: Variables & Datatypes">
+            </div>
+            <div class="video-info">
+                <div class="video-title">Object Methods</div>
+            </div>
+        </a>
+
+        <a href="https://www.youtube.com/watch?v=RkOgR2gTD20" target="_blank" class="video-card">
+            <div class="thumbnail-container">
+                <img src="https://img.youtube.com/vi/RkOgR2gTD20/maxresdefault.jpg" alt="Java Tutorial #2: Variables & Datatypes">
+            </div>
+            <div class="video-info">
+                <div class="video-title">Encapsulation</div>
+            </div>
+        </a>
+
+        <a href="https://www.youtube.com/watch?v=FcJnGlDRlP8" target="_blank" class="video-card">
+            <div class="thumbnail-container">
+                <img src="https://img.youtube.com/vi/FcJnGlDRlP8/maxresdefault.jpg" alt="Java Tutorial #2: Variables & Datatypes">
+            </div>
+            <div class="video-info">
+                <div class="video-title">Overloading Constructors</div>
+            </div>
+        </a>
+
+        <a href="https://www.youtube.com/watch?v=ptyqpfyB6oA" target="_blank" class="video-card">
+            <div class="thumbnail-container">
+                <img src="https://img.youtube.com/vi/ptyqpfyB6oA/maxresdefault.jpg" alt="Java Tutorial #2: Variables & Datatypes">
+            </div>
+            <div class="video-info">
+                <div class="video-title">Inheritance</div>
+            </div>
+        </a>
+
+        <a href="https://www.youtube.com/watch?v=3uPkB0_OdiM" target="_blank" class="video-card">
+            <div class="thumbnail-container">
+                <img src="https://img.youtube.com/vi/3uPkB0_OdiM/maxresdefault.jpg" alt="Java Tutorial #2: Variables & Datatypes">
+            </div>
+            <div class="video-info">
+                <div class="video-title">Polymorphism</div>
+            </div>
+        </a>
+
+        <a href="https://www.youtube.com/watch?v=vr-OAZZZE_Y" target="_blank" class="video-card">
+            <div class="thumbnail-container">
+                <img src="https://img.youtube.com/vi/vr-OAZZZE_Y/maxresdefault.jpg" alt="Java Tutorial #2: Variables & Datatypes">
+            </div>
+            <div class="video-info">
+                <div class="video-title">Abstraction</div>
+            </div>
+        </a>
+
+        <a href="https://www.youtube.com/watch?v=ynHgzRZyOXE" target="_blank" class="video-card">
+            <div class="thumbnail-container">
+                <img src="https://img.youtube.com/vi/ynHgzRZyOXE/maxresdefault.jpg" alt="Java Tutorial #2: Variables & Datatypes">
+            </div>
+            <div class="video-info">
+                <div class="video-title">Abstraction Interface</div>
+            </div>
+        </a>
+
+        <a href="https://www.youtube.com/watch?v=eLgxaCtIkAc" target="_blank" class="video-card">
+            <div class="thumbnail-container">
+                <img src="https://img.youtube.com/vi/eLgxaCtIkAc/maxresdefault.jpg" alt="Java Tutorial #2: Variables & Datatypes">
+            </div>
+            <div class="video-info">
+                <div class="video-title">Array Of Objects</div>
+            </div>
+        </a>
+
+        <a href="https://www.youtube.com/watch?v=D4ZEbQ6v2Zk" target="_blank" class="video-card">
+            <div class="thumbnail-container">
+                <img src="https://img.youtube.com/vi/D4ZEbQ6v2Zk/maxresdefault.jpg" alt="Java Tutorial #2: Variables & Datatypes">
+            </div>
+            <div class="video-info">
+                <div class="video-title">Enum</div>
+            </div>
+        </a>
+
+        <a href="https://www.youtube.com/watch?v=A2oV9XAD2R8" target="_blank" class="video-card">
+            <div class="thumbnail-container">
+                <img src="https://img.youtube.com/vi/A2oV9XAD2R8/maxresdefault.jpg" alt="Java Tutorial #2: Variables & Datatypes">
+            </div>
+            <div class="video-info">
+                <div class="video-title">Array Lists</div>
+            </div>
+        </a>
+
+        <a href="https://www.youtube.com/watch?v=Lvnb83qt57g" target="_blank" class="video-card">
+            <div class="thumbnail-container">
+                <img src="https://img.youtube.com/vi/Lvnb83qt57g/maxresdefault.jpg" alt="Java Tutorial #2: Variables & Datatypes">
+            </div>
+            <div class="video-info">
+                <div class="video-title">Java abstraction 👻</div>
+            </div>
+        </a>
+
+        <a href="https://www.youtube.com/watch?v=jhDUxynEQRI" target="_blank" class="video-card">
+            <div class="thumbnail-container">
+                <img src="https://img.youtube.com/vi/jhDUxynEQRI/maxresdefault.jpg" alt="Java Tutorial #2: Variables & Datatypes">
+            </div>
+            <div class="video-info">
+                <div class="video-title">Java Polymorphism Fully Explained In 7 Minutes</div>
+            </div>
+        </a>
+
+        <a href="https://www.youtube.com/watch?v=2hkngtWLGvE" target="_blank" class="video-card">
+            <div class="thumbnail-container">
+                <img src="https://img.youtube.com/vi/2hkngtWLGvE/maxresdefault.jpg" alt="Java Tutorial #2: Variables & Datatypes">
+            </div>
+            <div class="video-info">
+                <div class="video-title">Java polymorphism 🏁</div>
+            </div>
+        </a>
+
+        <a href="https://www.youtube.com/watch?v=s7GQ5HmlGQY" target="_blank" class="video-card">
+            <div class="thumbnail-container">
+                <img src="https://img.youtube.com/vi/s7GQ5HmlGQY/maxresdefault.jpg" alt="Java Tutorial #2: Variables & Datatypes">
+            </div>
+            <div class="video-info">
+                <div class="video-title">Methods / Functions</div>
+            </div>
+        </a>
+
+        <a href="https://www.youtube.com/watch?v=s7GQ5HmlGQY" target="_blank" class="video-card">
+            <div class="thumbnail-container">
+                <img src="https://img.youtube.com/vi/s7GQ5HmlGQY/maxresdefault.jpg" alt="Java Tutorial #2: Variables & Datatypes">
+            </div>
+            <div class="video-info">
+                <div class="video-title">Methods / Functions</div>
+            </div>
+        </a>
+
+        <a href="https://www.youtube.com/watch?v=s7GQ5HmlGQY" target="_blank" class="video-card">
+            <div class="thumbnail-container">
+                <img src="https://img.youtube.com/vi/s7GQ5HmlGQY/maxresdefault.jpg" alt="Java Tutorial #2: Variables & Datatypes">
+            </div>
+            <div class="video-info">
+                <div class="video-title">Methods / Functions</div>
+            </div>
+        </a>
+
+        <a href="https://www.youtube.com/watch?v=s7GQ5HmlGQY" target="_blank" class="video-card">
+            <div class="thumbnail-container">
+                <img src="https://img.youtube.com/vi/s7GQ5HmlGQY/maxresdefault.jpg" alt="Java Tutorial #2: Variables & Datatypes">
+            </div>
+            <div class="video-info">
+                <div class="video-title">Methods / Functions</div>
+            </div>
+        </a>
+
+        <a href="https://www.youtube.com/watch?v=s7GQ5HmlGQY" target="_blank" class="video-card">
+            <div class="thumbnail-container">
+                <img src="https://img.youtube.com/vi/s7GQ5HmlGQY/maxresdefault.jpg" alt="Java Tutorial #2: Variables & Datatypes">
+            </div>
+            <div class="video-info">
+                <div class="video-title">Methods / Functions</div>
+            </div>
+        </a>
+
+        <a href="https://www.youtube.com/watch?v=s7GQ5HmlGQY" target="_blank" class="video-card">
+            <div class="thumbnail-container">
+                <img src="https://img.youtube.com/vi/s7GQ5HmlGQY/maxresdefault.jpg" alt="Java Tutorial #2: Variables & Datatypes">
+            </div>
+            <div class="video-info">
+                <div class="video-title">Methods / Functions</div>
+            </div>
+        </a>
+
+        <a href="https://www.youtube.com/watch?v=s7GQ5HmlGQY" target="_blank" class="video-card">
+            <div class="thumbnail-container">
+                <img src="https://img.youtube.com/vi/s7GQ5HmlGQY/maxresdefault.jpg" alt="Java Tutorial #2: Variables & Datatypes">
+            </div>
+            <div class="video-info">
+                <div class="video-title">Methods / Functions</div>
+            </div>
+        </a>
+
+        <a href="https://www.youtube.com/watch?v=s7GQ5HmlGQY" target="_blank" class="video-card">
+            <div class="thumbnail-container">
+                <img src="https://img.youtube.com/vi/s7GQ5HmlGQY/maxresdefault.jpg" alt="Java Tutorial #2: Variables & Datatypes">
+            </div>
+            <div class="video-info">
+                <div class="video-title">Methods / Functions</div>
+            </div>
+        </a>
+
+        <a href="https://www.youtube.com/watch?v=s7GQ5HmlGQY" target="_blank" class="video-card">
+            <div class="thumbnail-container">
+                <img src="https://img.youtube.com/vi/s7GQ5HmlGQY/maxresdefault.jpg" alt="Java Tutorial #2: Variables & Datatypes">
+            </div>
+            <div class="video-info">
+                <div class="video-title">Methods / Functions</div>
+            </div>
+        </a>
+
+        <a href="https://www.youtube.com/watch?v=s7GQ5HmlGQY" target="_blank" class="video-card">
+            <div class="thumbnail-container">
+                <img src="https://img.youtube.com/vi/s7GQ5HmlGQY/maxresdefault.jpg" alt="Java Tutorial #2: Variables & Datatypes">
+            </div>
+            <div class="video-info">
+                <div class="video-title">Methods / Functions</div>
+            </div>
+        </a>
+
+        <a href="https://www.youtube.com/watch?v=s7GQ5HmlGQY" target="_blank" class="video-card">
+            <div class="thumbnail-container">
+                <img src="https://img.youtube.com/vi/s7GQ5HmlGQY/maxresdefault.jpg" alt="Java Tutorial #2: Variables & Datatypes">
+            </div>
+            <div class="video-info">
+                <div class="video-title">Methods / Functions</div>
+            </div>
+        </a>
+
+        <a href="https://www.youtube.com/watch?v=s7GQ5HmlGQY" target="_blank" class="video-card">
+            <div class="thumbnail-container">
+                <img src="https://img.youtube.com/vi/s7GQ5HmlGQY/maxresdefault.jpg" alt="Java Tutorial #2: Variables & Datatypes">
+            </div>
+            <div class="video-info">
+                <div class="video-title">Methods / Functions</div>
+            </div>
+        </a>
+
+        <a href="https://www.youtube.com/watch?v=s7GQ5HmlGQY" target="_blank" class="video-card">
+            <div class="thumbnail-container">
+                <img src="https://img.youtube.com/vi/s7GQ5HmlGQY/maxresdefault.jpg" alt="Java Tutorial #2: Variables & Datatypes">
+            </div>
+            <div class="video-info">
+                <div class="video-title">Methods / Functions</div>
+            </div>
+        </a>
+
+        <a href="https://www.youtube.com/watch?v=s7GQ5HmlGQY" target="_blank" class="video-card">
+            <div class="thumbnail-container">
+                <img src="https://img.youtube.com/vi/s7GQ5HmlGQY/maxresdefault.jpg" alt="Java Tutorial #2: Variables & Datatypes">
+            </div>
+            <div class="video-info">
+                <div class="video-title">Methods / Functions</div>
+            </div>
+        </a>
+
+        <a href="https://www.youtube.com/watch?v=s7GQ5HmlGQY" target="_blank" class="video-card">
+            <div class="thumbnail-container">
+                <img src="https://img.youtube.com/vi/s7GQ5HmlGQY/maxresdefault.jpg" alt="Java Tutorial #2: Variables & Datatypes">
+            </div>
+            <div class="video-info">
+                <div class="video-title">Methods / Functions</div>
+            </div>
+        </a>
+
+        <a href="https://www.youtube.com/watch?v=s7GQ5HmlGQY" target="_blank" class="video-card">
+            <div class="thumbnail-container">
+                <img src="https://img.youtube.com/vi/s7GQ5HmlGQY/maxresdefault.jpg" alt="Java Tutorial #2: Variables & Datatypes">
+            </div>
+            <div class="video-info">
+                <div class="video-title">Methods / Functions</div>
+            </div>
+        </a>
+
+        <a href="https://www.youtube.com/watch?v=s7GQ5HmlGQY" target="_blank" class="video-card">
+            <div class="thumbnail-container">
+                <img src="https://img.youtube.com/vi/s7GQ5HmlGQY/maxresdefault.jpg" alt="Java Tutorial #2: Variables & Datatypes">
+            </div>
+            <div class="video-info">
+                <div class="video-title">Methods / Functions</div>
+            </div>
+        </a>
+
+        <a href="https://www.youtube.com/watch?v=s7GQ5HmlGQY" target="_blank" class="video-card">
+            <div class="thumbnail-container">
+                <img src="https://img.youtube.com/vi/s7GQ5HmlGQY/maxresdefault.jpg" alt="Java Tutorial #2: Variables & Datatypes">
+            </div>
+            <div class="video-info">
+                <div class="video-title">Methods / Functions</div>
+            </div>
+        </a>
+
+        <a href="https://www.youtube.com/watch?v=s7GQ5HmlGQY" target="_blank" class="video-card">
+            <div class="thumbnail-container">
+                <img src="https://img.youtube.com/vi/s7GQ5HmlGQY/maxresdefault.jpg" alt="Java Tutorial #2: Variables & Datatypes">
+            </div>
+            <div class="video-info">
+                <div class="video-title">Methods / Functions</div>
+            </div>
+        </a>
+
+        <a href="https://www.youtube.com/watch?v=s7GQ5HmlGQY" target="_blank" class="video-card">
+            <div class="thumbnail-container">
+                <img src="https://img.youtube.com/vi/s7GQ5HmlGQY/maxresdefault.jpg" alt="Java Tutorial #2: Variables & Datatypes">
+            </div>
+            <div class="video-info">
+                <div class="video-title">Methods / Functions</div>
+            </div>
+        </a>
+
+        <a href="https://www.youtube.com/watch?v=s7GQ5HmlGQY" target="_blank" class="video-card">
+            <div class="thumbnail-container">
+                <img src="https://img.youtube.com/vi/s7GQ5HmlGQY/maxresdefault.jpg" alt="Java Tutorial #2: Variables & Datatypes">
+            </div>
+            <div class="video-info">
+                <div class="video-title">Methods / Functions</div>
+            </div>
+        </a>
+
+    </div>
+    
+    <p class="no-results" id="noResults">No videos found matching that search.</p>
+
+    <script>
+        const searchInput = document.getElementById('searchBar');
+        const videoCards = document.getElementsByClassName('video-card');
+        const noResultsMsg = document.getElementById('noResults');
+
+        searchInput.addEventListener('keyup', function(event) {
+            const searchTerm = event.target.value.toLowerCase();
+            let hasMatches = false;
+
+            for (let i = 0; i < videoCards.length; i++) {
+                const card = videoCards[i];
+                const title = card.querySelector('.video-title').textContent.toLowerCase();
+
+                if (title.includes(searchTerm)) {
+                    card.style.display = ""; /* Show it */
+                    hasMatches = true;
+                } else {
+                    card.style.display = "none"; /* Hide it */
+                }
+            }
+
+            // Show "No Results" message if everything is hidden
+            if (hasMatches) {
+                noResultsMsg.style.display = "none";
+            } else {
+                noResultsMsg.style.display = "block";
+            }
+        });
+    </script>
+</body>
+</html>
+
