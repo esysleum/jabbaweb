@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Game & Tutorial Hub</title>
+    <style>
+        /* --- General Reset --- */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+
+        body {
+            background-color: white; /* Ensures the bottom half is white */
+        }
+
+        /* --- Top Navigation Bar --- */
+        .navbar {
+            position: absolute; /* Sits on top of the image */
+            top: 0;
+            width: 100%;
+            padding: 20px;
+            display: flex;
+            justify-content: center; /* Centers the buttons */
+            gap: 20px; /* Space between buttons */
+            z-index: 10; /* Ensures buttons are clickable above the image */
+        }
+
+        /* --- The Red Buttons --- */
+        .nav-btn {
+            background-color: #d32f2f; /* A professional shade of Red */
+            color: white;
+            text-decoration: none;
+            padding: 12px 25px;
+            border-radius: 5px;
+            font-weight: bold;
+            font-size: 1.1rem;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.2);
+            transition: transform 0.2s, background-color 0.2s;
+        }
+
+        .nav-btn:hover {
+            background-color: #b71c1c; /* Darker red on hover */
+            transform: translateY(-2px); /* Slight lift effect */
+        }
+
+        /* --- Background Section (The Image) --- */
+        .hero-section {
+            width: 100%;
+            height: 60vh; /* Takes up 60% of the screen height */
+            
+            /* Placeholder image related to gaming/technology */
+            background-image: url('https://images.unsplash.com/photo-1550745165-9bc0b252726f?q=80&w=2070&auto=format&fit=crop'); 
+            
+            background-size: cover;
+            background-position: center;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            
+            /* This creates a subtle shadow at the bottom to separate it from the white */
+            box-shadow: 0 10px 20px rgba(0,0,0,0.1); 
+        }
+
+        /* --- Content Section (The White Part) --- */
+        .content-section {
+            background-color: white;
+            padding: 50px 20px;
+            text-align: center;
+            min-height: 40vh; /* Takes up the rest of the screen */
+        }
+
+        h1 {
+            color: #333;
+            margin-bottom: 15px;
+        }
+        
+        p {
+            color: #666;
+            max-width: 600px;
+            margin: 0 auto;
+            line-height: 1.6;
+        }
+    </style>
+</head>
+<body>
+
+    <nav class="navbar">
+        <a href="untodawn.html" class="nav-btn">Maze Games</a>
+        <a href="texttutorial.html" class="nav-btn">Text Tutorials</a>
+        <a href="videotutorial.html" class="nav-btn">Video Tutorials</a>
+    </nav>
+
+    <header class="hero-section">
+        </header>
+
+    <section class="content-section">
+        <h1>Welcome to Our Website</h1>
+        <p>
+            Select a category from the red buttons above to get started. 
+            Whether you are here to play maze games or learn through our tutorials, 
+            we have something for everyone.
+        </p>
+    </section>
+
+</body>
+</html>
