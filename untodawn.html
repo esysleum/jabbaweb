@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
-    <title>Quiz Maze - Enhanced</title>
+    <title>Maze</title>
     <style>
         :root {
             --bg-color: #2c3e50;
@@ -173,14 +173,18 @@
 
     // Quiz Bank
     const quizBank = [
-        { q: "5 + 5 = ?", options: ["10", "20", "15"], a: 0 },
-        { q: "Capital of Japan?", options: ["Beijing", "Seoul", "Tokyo"], a: 2 },
-        { q: "Color of grass?", options: ["Red", "Green", "Blue"], a: 1 },
-        { q: "Is fire hot?", options: ["No", "Yes", "Maybe"], a: 1 },
-        { q: "Legs on a dog?", options: ["2", "4", "8"], a: 1 },
-        { q: "Which is a fruit?", options: ["Carrot", "Apple", "Potato"], a: 1 }
+        { q: "What is Java primarily known as?", options: ["A cup of coffee", "A programming language", "An island"], a: 1 },
+        { q: "What is the return type of a method that does not return any value?", options: ["int", "float", "void", "double"], a: 2 },
+        { q: "Which keyword defines interfaces in Java?", options: ["Interface", "interface", "Intf"], a: 1 },
+        { q: "Which keyword is used to define packages in Java?", options: ["Pkg", "pkg", "Package", "package"], a: 3 },
+        { q: "What is the process of writing an object’s state to a byte stream called?", options: ["Serialization", "Externalization", "File Filtering"], a: 0 },
+        { q: "Which keyword calls the constructor of a superclass in a subclass?", options: ["super", "Extent", "extends"], a: 0 },
+        { q: "Which method of the String class compares two strings for equality of content?", options: ["equals", " isequal", "compare"], a: 0 },
+        { q: "Which keyword declares a constant in Java?", options: ["final", "const", "static"], a: 1 },                                                                            
+        { q: "Which data type stores a single character in Java?", options: ["int", "float", "char"], a: 2 },
+        { q: "Which class is used for byte-based input/output operations?", options: ["Reader", "InputStream", "Writer"], a: 1 }                                                                                        
     ];
-
+                                                                                                                                                                    
     function init() {
         document.getElementById('loading').style.display = 'block';
         
@@ -476,3 +480,4 @@
 </script>
 </body>
 </html>
+
