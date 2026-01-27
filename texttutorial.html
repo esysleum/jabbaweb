@@ -1,1 +1,81 @@
-<h1> Under Construction, soz :( </h1> 
+<!DOCTYPE html>
+<html>
+<head>
+  <meta http-equiv="CONTENT-TYPE" content="text/html; charset=UTF-8">
+  <title>Text tutorial</title>
+  <style>
+    body { background-color: lightblue; }
+    .tutorial-link { 
+      border: 1px solid #003; 
+      padding: 5px; 
+      width: 200px; 
+      text-align: center; 
+      margin: 10px 0;
+    }
+  </style>
+</head>
+<body>
+  <!-- Search Bar Section -->
+  <search>
+    <label for="site-search">Search content:</label>
+    <input type="search" id="site-search" name="q" placeholder="Search tutorials..." aria-label="Search through site content">
+    <button type="button" onclick="searchTutorials()">Search</button>
+    <!-- Optional: Clear button -->
+    <button type="button" onclick="clearSearch()">Clear</button>
+  </search>
+ 
+  <h2>Test Adventure Game Tutorial In Java</h2>
+  <div class="tutorial-link"><a href="https://youtu.be/2ihKO4i7lS8?si=cs0OvIYt-TMXMtCg">Display Text</a></div>
+  <div class="tutorial-link"><a href="https://youtu.be/GtGwX7B-MIs?si=GhNciJYwjJlHVAVR">Get Keyboard Input</a></div>
+  <div class="tutorial-link"><a href="https://youtu.be/UcOsXCq4DoE?si=cXlozFyEylcQNrDp">HP And Weapon</a></div>
+  <div class="tutorial-link"><a href="https://youtu.be/S8ojioJ7Gfw?si=zwEFfPsfXE5X1nrC">Writing a Story</a></div>
+  <div class="tutorial-link"><a href="https://youtu.be/r5ZYfcynZSw?si=-8PF0cB4-_Y5B3YB">About Method</a></div>
+  <div class="tutorial-link"><a href="https://youtu.be/S0alrgoHSds?si=zpI2uum2DLp8lWmd">Create Events</a></div>
+  <div class="tutorial-link"><a href="https://youtu.be/9-mjw2ZJBwg?si=dDaDPRdcPuADIpAy">Battle System</a></div>
+ 
+  <h2>Java Text RPG Tutorial</h2>
+  <div class="tutorial-link"><a href="https://youtu.be/X6jJAZFVDws?si=XEyIfOOYFJnU_qJX">#0 Introduction</a></div>
+  <div class="tutorial-link"><a href="https://youtu.be/L4eqsWCvoB0?si=3zQY7k8-Bh3YwNi6">#1 Structure And Helper Methods</a></div>
+  <div class="tutorial-link"><a href="https://youtu.be/u3PRtZpqb1A?si=yc7SoKD4xif75O-x">#2 Characters And Game Start</a></div>
+  <div class="tutorial-link"><a href="https://youtu.be/EQ24lMaJCvg?si=Nwo0miAgm83prDWq">#3 Main Game Loop, Menu And Story</a></div>
+  <div class="tutorial-link"><a href="https://youtu.be/s45KKGwlhvs?si=8Y2iIKT35eTqaCXr">#4 Random Encounters And Enemies</a></div>
+  <div class="tutorial-link"><a href="https://youtu.be/hbrvioPiSdA?si=25WFzOAnnDCHPMFw">#5 Battle System</a></div>
+  <div class="tutorial-link"><a href="https://youtu.be/00y8b68adEY?si=GrBesow7Sl_qI0-P">#6 [End] Last Features And Final Battle</a></div>
+ 
+  <h2>For Beginner</h2>
+  <div class="tutorial-link"><a href="https://youtu.be/G5yr4sekAI0?si=79Kg6j9_X1hLSdXh">Beginner's Game Programming Tutorial [Swing]</a></div>
+  <div class="tutorial-link"><a href="https://youtu.be/RcvABhflOkI?si=GRbvNvtvM3CaUKHn">Create Title Screen</a></div>
+  <div class="tutorial-link"><a href="https://youtu.be/vUD5Mo2jjHs?si=tz0FOa49qwpfF9w7">Add Function to Button</a></div>
+  <div class="tutorial-link"><a href="https://youtu.be/QTRaLkA-XBw?si=G2FM-nkNbPBCBPYk">Display Player Status</a></div>
+  <div class="tutorial-link"><a href="https://youtu.be/LnDQTT3u0MQ?si=KweEc9ncZQZspJZo">Handling Player Choice With Switch</a></div>
+  <div class="tutorial-link"><a href="https://youtu.be/LnDQTT3u0MQ?si=DpcYjD_PhHVENitw">Complete The Game</a></div>
+ 
+  <script>
+    // Search function
+    function searchTutorials() {
+      const searchInput = document.getElementById('site-search').value.toLowerCase();
+      const tutorialLinks = document.querySelectorAll('.tutorial-link');
+ 
+      tutorialLinks.forEach(link => {
+        const text = link.textContent.toLowerCase();
+        // Show link if text matches search input, else hide
+        link.style.display = text.includes(searchInput) ? 'block' : 'none';
+      });
+    }
+ 
+    // Clear search function
+    function clearSearch() {
+      document.getElementById('site-search').value = '';
+      const tutorialLinks = document.querySelectorAll('.tutorial-link');
+      tutorialLinks.forEach(link => link.style.display = 'block');
+    }
+ 
+    // Optional: Trigger search on "Enter" key press
+    document.getElementById('site-search').addEventListener('keypress', function(e) {
+      if (e.key === 'Enter') searchTutorials();
+    });
+  </script>
+</body>
+</html>
+
+
