@@ -1,81 +1,206 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-  <meta http-equiv="CONTENT-TYPE" content="text/html; charset=UTF-8">
-  <title>Text tutorial</title>
-  <style>
-    body { background-color: lightblue; }
-    .tutorial-link { 
-      border: 1px solid #003; 
-      padding: 5px; 
-      width: 200px; 
-      text-align: center; 
-      margin: 10px 0;
-    }
-  </style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tutorial Repository</title>
+    <style>
+        /* --- 1. General Styling --- */
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: #f4f4f9;
+            color: #333;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+        }
+
+        .container {
+            width: 90%;
+            max-width: 800px;
+            margin-top: 50px;
+        }
+
+        h1 {
+            text-align: center;
+            color: #2c3e50;
+        }
+
+        /* --- 2. Search Bar Styling --- */
+        .search-box {
+            width: 100%;
+            padding: 15px;
+            font-size: 18px;
+            border: 2px solid #ddd;
+            border-radius: 8px;
+            margin-bottom: 30px;
+            box-sizing: border-box; /* Ensures padding doesn't affect width */
+            transition: border-color 0.3s;
+        }
+
+        .search-box:focus {
+            outline: none;
+            border-color: #3498db;
+            box-shadow: 0 0 8px rgba(52, 152, 219, 0.3);
+        }
+
+        /* --- 3. Tutorial List Styling --- */
+        .tutorial-list {
+            list-style-type: none;
+            padding: 0;
+        }
+
+        .tutorial-item {
+            background-color: white;
+            border-radius: 8px;
+            padding: 20px;
+            margin-bottom: 15px;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.05);
+            transition: transform 0.2s;
+        }
+
+        .tutorial-item:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+        }
+
+        .tutorial-item a {
+            text-decoration: none;
+            color: inherit;
+            display: block; /* Makes the whole card clickable */
+        }
+
+        .tutorial-title {
+            margin: 0 0 10px 0;
+            color: #2980b9;
+            font-size: 1.2rem;
+        }
+
+        .tutorial-desc {
+            margin: 0;
+            color: #666;
+            line-height: 1.5;
+        }
+
+        .category-tag {
+            display: inline-block;
+            background-color: #e1ecf4;
+            color: #39739d;
+            padding: 4px 8px;
+            border-radius: 4px;
+            font-size: 0.8rem;
+            margin-top: 10px;
+            font-weight: bold;
+        }
+
+        /* Utility class to hide items via JavaScript */
+        .hidden {
+            display: none;
+        }
+        
+        .no-results {
+            text-align: center;
+            color: #888;
+            margin-top: 20px;
+            display: none;
+        }
+    </style>
 </head>
 <body>
-  <!-- Search Bar Section -->
-  <search>
-    <label for="site-search">Search content:</label>
-    <input type="search" id="site-search" name="q" placeholder="Search tutorials..." aria-label="Search through site content">
-    <button type="button" onclick="searchTutorials()">Search</button>
-    <!-- Optional: Clear button -->
-    <button type="button" onclick="clearSearch()">Clear</button>
-  </search>
- 
-  <h2>Test Adventure Game Tutorial In Java</h2>
-  <div class="tutorial-link"><a href="https://youtu.be/2ihKO4i7lS8?si=cs0OvIYt-TMXMtCg">Display Text</a></div>
-  <div class="tutorial-link"><a href="https://youtu.be/GtGwX7B-MIs?si=GhNciJYwjJlHVAVR">Get Keyboard Input</a></div>
-  <div class="tutorial-link"><a href="https://youtu.be/UcOsXCq4DoE?si=cXlozFyEylcQNrDp">HP And Weapon</a></div>
-  <div class="tutorial-link"><a href="https://youtu.be/S8ojioJ7Gfw?si=zwEFfPsfXE5X1nrC">Writing a Story</a></div>
-  <div class="tutorial-link"><a href="https://youtu.be/r5ZYfcynZSw?si=-8PF0cB4-_Y5B3YB">About Method</a></div>
-  <div class="tutorial-link"><a href="https://youtu.be/S0alrgoHSds?si=zpI2uum2DLp8lWmd">Create Events</a></div>
-  <div class="tutorial-link"><a href="https://youtu.be/9-mjw2ZJBwg?si=dDaDPRdcPuADIpAy">Battle System</a></div>
- 
-  <h2>Java Text RPG Tutorial</h2>
-  <div class="tutorial-link"><a href="https://youtu.be/X6jJAZFVDws?si=XEyIfOOYFJnU_qJX">#0 Introduction</a></div>
-  <div class="tutorial-link"><a href="https://youtu.be/L4eqsWCvoB0?si=3zQY7k8-Bh3YwNi6">#1 Structure And Helper Methods</a></div>
-  <div class="tutorial-link"><a href="https://youtu.be/u3PRtZpqb1A?si=yc7SoKD4xif75O-x">#2 Characters And Game Start</a></div>
-  <div class="tutorial-link"><a href="https://youtu.be/EQ24lMaJCvg?si=Nwo0miAgm83prDWq">#3 Main Game Loop, Menu And Story</a></div>
-  <div class="tutorial-link"><a href="https://youtu.be/s45KKGwlhvs?si=8Y2iIKT35eTqaCXr">#4 Random Encounters And Enemies</a></div>
-  <div class="tutorial-link"><a href="https://youtu.be/hbrvioPiSdA?si=25WFzOAnnDCHPMFw">#5 Battle System</a></div>
-  <div class="tutorial-link"><a href="https://youtu.be/00y8b68adEY?si=GrBesow7Sl_qI0-P">#6 [End] Last Features And Final Battle</a></div>
- 
-  <h2>For Beginner</h2>
-  <div class="tutorial-link"><a href="https://youtu.be/G5yr4sekAI0?si=79Kg6j9_X1hLSdXh">Beginner's Game Programming Tutorial [Swing]</a></div>
-  <div class="tutorial-link"><a href="https://youtu.be/RcvABhflOkI?si=GRbvNvtvM3CaUKHn">Create Title Screen</a></div>
-  <div class="tutorial-link"><a href="https://youtu.be/vUD5Mo2jjHs?si=tz0FOa49qwpfF9w7">Add Function to Button</a></div>
-  <div class="tutorial-link"><a href="https://youtu.be/QTRaLkA-XBw?si=G2FM-nkNbPBCBPYk">Display Player Status</a></div>
-  <div class="tutorial-link"><a href="https://youtu.be/LnDQTT3u0MQ?si=KweEc9ncZQZspJZo">Handling Player Choice With Switch</a></div>
-  <div class="tutorial-link"><a href="https://youtu.be/LnDQTT3u0MQ?si=DpcYjD_PhHVENitw">Complete The Game</a></div>
- 
-  <script>
-    // Search function
-    function searchTutorials() {
-      const searchInput = document.getElementById('site-search').value.toLowerCase();
-      const tutorialLinks = document.querySelectorAll('.tutorial-link');
- 
-      tutorialLinks.forEach(link => {
-        const text = link.textContent.toLowerCase();
-        // Show link if text matches search input, else hide
-        link.style.display = text.includes(searchInput) ? 'block' : 'none';
-      });
-    }
- 
-    // Clear search function
-    function clearSearch() {
-      document.getElementById('site-search').value = '';
-      const tutorialLinks = document.querySelectorAll('.tutorial-link');
-      tutorialLinks.forEach(link => link.style.display = 'block');
-    }
- 
-    // Optional: Trigger search on "Enter" key press
-    document.getElementById('site-search').addEventListener('keypress', function(e) {
-      if (e.key === 'Enter') searchTutorials();
-    });
-  </script>
+
+    <div class="container">
+        <h1>📚 Learning Hub</h1>
+        
+        <input type="text" id="searchInput" class="search-box" placeholder="Search for tutorials (e.g., Python, CSS, Data)...">
+
+        <ul id="tutorialList" class="tutorial-list">
+            
+            <li class="tutorial-item">
+                <a href="https://developer.mozilla.org/en-US/" target="_blank">
+                    <h3 class="tutorial-title">MDN Web Docs</h3>
+                    <p class="tutorial-desc">The ultimate resource for learning HTML, CSS, and JavaScript directly from the standards body.</p>
+                    <span class="category-tag">Web Development</span>
+                </a>
+            </li>
+
+            <li class="tutorial-item">
+                <a href="https://www.w3schools.com/python/" target="_blank">
+                    <h3 class="tutorial-title">W3Schools Python Tutorial</h3>
+                    <p class="tutorial-desc">A simple, interactive way to learn Python programming from scratch with examples.</p>
+                    <span class="category-tag">Python</span>
+                </a>
+            </li>
+
+            <li class="tutorial-item">
+                <a href="https://react.dev/learn" target="_blank">
+                    <h3 class="tutorial-title">React.js Official Documentation</h3>
+                    <p class="tutorial-desc">Learn how to build user interfaces with the React JavaScript library.</p>
+                    <span class="category-tag">JavaScript Frameworks</span>
+                </a>
+            </li>
+
+            <li class="tutorial-item">
+                <a href="https://www.freecodecamp.org/" target="_blank">
+                    <h3 class="tutorial-title">freeCodeCamp</h3>
+                    <p class="tutorial-desc">Build projects and earn certifications in Responsive Web Design, Algorithms, and more.</p>
+                    <span class="category-tag">Full Stack</span>
+                </a>
+            </li>
+
+            <li class="tutorial-item">
+                <a href="https://photoshopcafe.com/tutorials/" target="_blank">
+                    <h3 class="tutorial-title">PhotoshopCAFE</h3>
+                    <p class="tutorial-desc">Free tutorials on how to use Adobe Photoshop for graphic design and photo editing.</p>
+                    <span class="category-tag">Design</span>
+                </a>
+            </li>
+
+        </ul>
+        
+        <div id="noResults" class="no-results">No tutorials found matching your search.</div>
+    </div>
+
+    <script>
+        // --- JavaScript Logic ---
+        
+        // 1. Get references to the input and the list
+        const searchInput = document.getElementById('searchInput');
+        const tutorialList = document.getElementById('tutorialList');
+        const items = tutorialList.getElementsByClassName('tutorial-item');
+        const noResultsMsg = document.getElementById('noResults');
+
+        // 2. Add an event listener to listen for keystrokes
+        searchInput.addEventListener('keyup', function() {
+            const filter = searchInput.value.toLowerCase();
+            let visibleCount = 0;
+
+            // 3. Loop through all list items
+            for (let i = 0; i < items.length; i++) {
+                const title = items[i].getElementsByClassName('tutorial-title')[0].innerText;
+                const desc = items[i].getElementsByClassName('tutorial-desc')[0].innerText;
+                const tag = items[i].getElementsByClassName('category-tag')[0].innerText;
+
+                // Combine text to search through everything (Title + Description + Category)
+                const combinedText = (title + " " + desc + " " + tag).toLowerCase();
+
+                // 4. If the text matches, show it; otherwise, hide it
+                if (combinedText.indexOf(filter) > -1) {
+                    items[i].classList.remove('hidden');
+                    visibleCount++;
+                } else {
+                    items[i].classList.add('hidden');
+                }
+            }
+
+            // 5. Toggle "No Results" message
+            if (visibleCount === 0) {
+                noResultsMsg.style.display = 'block';
+            } else {
+                noResultsMsg.style.display = 'none';
+            }
+        });
+    </script>
+
 </body>
 </html>
-
-
